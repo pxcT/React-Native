@@ -976,6 +976,14 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@callstack/react-theme-provider@^3.0.5":
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/@callstack/react-theme-provider/-/react-theme-provider-3.0.5.tgz#a173e455e9603c9c45357a3b6ace1273086527ca"
+  integrity sha512-Iec+ybWN0FvNj87sD3oWo/49edGUP0UOSdMnzCJEFJIDYr992ECIuOV89burAAh2/ibPCxgLiK6dmgv2mO/8Tg==
+  dependencies:
+    deepmerge "^3.2.0"
+    hoist-non-react-statics "^3.3.0"
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
@@ -1007,7 +1015,7 @@
     xcode "^3.0.0"
     xml-js "^1.6.11"
 
-"@expo/vector-icons@^10.0.2":
+"@expo/vector-icons@^10.0.2", "@expo/vector-icons@^10.2.0":
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/@expo/vector-icons/-/vector-icons-10.2.0.tgz#3c70656683a6a873e18efc00bc61fc160a80dc55"
   integrity sha512-dYe0SW/xbzWRtWG7i1pc3QPMGMbdReVgP02XlwMkS4srAAjF0cZQVa3ZgZ6qzxI+OzKudpDXZRmENNth/b263g==
@@ -2922,7 +2930,7 @@ hoist-non-react-statics@^2.3.1:
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"
   integrity sha512-rqcy4pJo55FTTLWt+bU8ukscqHeE/e9KWvsOW2b/a3afxQZhwkQdT1rPPCJ0rYXdj4vNcasY8zHTH+jF/qStxw==
 
-hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.3.0, hoist-non-react-statics@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
@@ -3022,7 +3030,7 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-invariant@^2.2.2, invariant@^2.2.4:
+invariant@>=2, invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -4494,6 +4502,20 @@ react-native-iphone-x-helper@^1.2.1:
   resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
   integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
 
+react-native-paper@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-4.0.1.tgz#13d2272757fb738113582e900787f365cfa77c74"
+  integrity sha512-C1kHZ5sS3QU2XdmdHnLAzp88T+FWtkOa+43wYjBClevsDvi72aRf6H9PTs8GS69E8tlNHym3kbVcENgnDPMqhQ==
+  dependencies:
+    "@callstack/react-theme-provider" "^3.0.5"
+    color "^3.1.2"
+    react-native-safe-area-view "^0.14.9"
+
+react-native-platform-touchable@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-platform-touchable/-/react-native-platform-touchable-1.1.1.tgz#fde4acc65eea585d28b164d0c3716a42129a68e4"
+  integrity sha1-/eSsxl7qWF0osWTQw3FqQhKaaOQ=
+
 react-native-reanimated@~1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.9.0.tgz#38676c99dd585504fdc7331efb45e5f48ec7339a"
@@ -4578,6 +4600,19 @@ react-navigation-drawer@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-navigation-drawer/-/react-navigation-drawer-2.5.0.tgz#6d2940fb6f9ae557b47a717203b4058194ae9665"
   integrity sha512-wSsIdLYXYdi9wOOXGzaY4Hk/NIXaP8tClEpjlAPl1rhn3kU++gyJFcQ3xLsPWg0yRYq3y8jDPEWFFf81JqfP9Q==
+
+react-navigation-header-buttons@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/react-navigation-header-buttons/-/react-navigation-header-buttons-5.0.2.tgz#e2701dc1d27637b73ab458033ee7c0f49992bf82"
+  integrity sha512-tr23aMc/Aakrp8J8+Py6qCg2gPqr+XtBLDuv0+CFdU521ersA4q0vLJjGtYTzP9Lg+bKhR29foWizK1Xl9ft+g==
+  dependencies:
+    invariant ">=2"
+    react-native-platform-touchable "^1.1.1"
+
+react-navigation-material-bottom-tabs@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-navigation-material-bottom-tabs/-/react-navigation-material-bottom-tabs-2.3.0.tgz#7b08ec5b96bc84b1bda5011f857cedc6af985a66"
+  integrity sha512-XHV92IOOoLRjHpdqbjxIHjuLAGwJCOIVxq4ZqW47RQWQZ6NejIDJnwc9MWc7UsChXsu9lbwCEOgss6GxLjFxwg==
 
 react-navigation-stack@^2.8.2:
   version "2.8.2"
