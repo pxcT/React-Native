@@ -10,6 +10,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
 import mealsReducer from './store/reducers/meals.reducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import MealsNavigator from './navigation/MealsNavigator';
 
@@ -19,7 +20,7 @@ const rootReducer = combineReducers({
     meals: mealsReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 const fetchFonts = () => {
     return Font.loadAsync({
