@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View, Text } from 'react-native';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 
-import  productsReducer from './store/reducers/products.reducer';
+import productsReducer from './store/reducers/products.reducer';
+import ShopNavigator from './navigation/ShopNavigator';
 
 const rootReducer = combineReducers({
     products: productsReducer
@@ -32,7 +33,7 @@ export default function App() {
 
     return (
         <Provider store={store}>
-            <View>hi</View>
+          <ShopNavigator/>
         </Provider>
     );
 }

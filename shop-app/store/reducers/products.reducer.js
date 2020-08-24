@@ -3,7 +3,7 @@ import Product from '../../models/product';
 
 const initialState = {
     availableProducts: PRODUCTS,
-    userProducts: PRODUCTS.filter(product => products.owerId === 'u1');
+    userProducts: PRODUCTS.filter(product => product.owerId === 'u1')
 }
 
 export default productsReducer = (state = initialState, action) => {
