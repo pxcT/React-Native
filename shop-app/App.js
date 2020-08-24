@@ -3,6 +3,16 @@ import { Text, View } from 'react-native';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+
+import  productsReducer from './store/reducers/products.reducer';
+
+const rootReducer = combineReducers({
+    products: productsReducer
+});
+
+const store = createStore(rootReducer);
 
 const fetchFonts = () => {
     return Font.loadAsync({
@@ -21,8 +31,8 @@ export default function App() {
     }
 
     return (
-        <View>
-            <Text>Open up App.js to start working on your app!</Text>
-        </View>
+        <Provider store={store}>
+            <View>hi</View>
+        </Provider>
     );
 }
