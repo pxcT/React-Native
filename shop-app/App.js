@@ -8,12 +8,16 @@ import { Provider } from 'react-redux';
 
 import productsReducer from './store/reducers/products.reducer';
 import ShopNavigator from './navigation/ShopNavigator';
+import cartReducer from './store/reducers/cart.reducer';
+
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
-    products: productsReducer
+    products: productsReducer,
+    cart: cartReducer
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, composeWithDevTools());
 
 const fetchFonts = () => {
     return Font.loadAsync({
