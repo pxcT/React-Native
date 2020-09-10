@@ -27,7 +27,6 @@ export default (state = initialState, action) => {
                 const newCartItem = new CartItem(1, prodPrice, prodTitle, prodPrice);
                 updatedOrNewCartItem = newCartItem;
             }
-
             return {
                 items: {...state.items, [addedProduct.id]: updatedOrNewCartItem },
                 totalAmount: state.totalAmount + prodPrice
