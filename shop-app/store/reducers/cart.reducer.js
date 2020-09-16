@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../actions/cart.actions";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../actions/cart.actions";
 import CartItem from '../../models/cart-item';
 
 const initialState = {
@@ -17,19 +17,45 @@ export default (state = initialState, action) => {
 
             if (state.items[addedProduct.id]) {
                 const updatedCartItem = new CartItem(
-                    state.items[addedProduct.id].quantity +  1,
+                    state.items[addedProduct.id].quantity + 1,
                     prodPrice,
                     prodTitle,
                     state.items[addedProduct.id].sum + prodPrice
-                );        
+                );
                 updatedOrNewCartItem = updatedCartItem;
             } else {
                 const newCartItem = new CartItem(1, prodPrice, prodTitle, prodPrice);
                 updatedOrNewCartItem = newCartItem;
             }
             return {
-                items: {...state.items, [addedProduct.id]: updatedOrNewCartItem },
+                items: { ...state.items, [addedProduct.id]: updatedOrNewCartItem },
                 totalAmount: state.totalAmount + prodPrice
+            }
+        case REMOVE_FROM_CART:
+            const selectedCartItem = state.items[action.pid];
+            const currentQty = state.items[action.pid].quantity;
+
+            let updatedCartItems;
+
+            if (currentQty > 1) {
+                // need to reduce it
+                const updatedCartItem = new CartItem(
+                    selectedCartItem.quantity - 1,
+                    selectedCartItem.productPrice,
+                    selectedCartItem.productTitle,
+                    selectedCartItem.sum - selectedCartItem.productPrice
+                );
+
+                updatedCartItems = { ...state.items, [action.pid]: updatedCartItem };
+            } else {
+                updatedCartItems = { ...state.items };
+                delete updatedCartItems[action.pid];
+            }
+
+            return {
+                ...state,
+                items: updatedCartItems,
+                totalAmount: state.totalAmount - selectedCartItem.productPrice
             }
     }
     return state;
