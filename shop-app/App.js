@@ -15,32 +15,35 @@ import ordersReducer from './store/reducers/orders.reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
-    products: productsReducer,
-    cart: cartReducer,
-    orders: ordersReducer
+	products: productsReducer,
+	cart: cartReducer,
+	orders: ordersReducer,
 });
 
 const store = createStore(rootReducer, composeWithDevTools());
 
 const fetchFonts = () => {
-    return Font.loadAsync({
-        'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
-        'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf')
-    });
-}
+	return Font.loadAsync({
+		'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+		'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+	});
+};
 
 export default function App() {
-    const [fontsLoaded, setFontsLoaded] = useState(false);
+	const [fontsLoaded, setFontsLoaded] = useState(false);
 
-    if (!fontsLoaded) {
-        return (
-            <AppLoading startAsync={fetchFonts} onFinish={() => setFontsLoaded(true)} />
-        )
-    }
+	if (!fontsLoaded) {
+		return (
+			<AppLoading
+				startAsync={fetchFonts}
+				onFinish={() => setFontsLoaded(true)}
+			/>
+		);
+	}
 
-    return (
-        <Provider store={store}>
-          <ShopNavigator/>
-        </Provider>
-    );
+	return (
+		<Provider store={store}>
+			<ShopNavigator />
+		</Provider>
+	);
 }
