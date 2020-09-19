@@ -17,16 +17,16 @@ const OrderItem = (props) => {
 			</View>
 			<Button
 				color={Colors.primary}
-				title='Show Details'
+				title={!showDetails ? 'Show Details' : 'Hide Details'}
 				onPress={() => {
 					setShowDetails((prevState) => !prevState);
 				}}
 			/>
 			{showDetails && (
-				<View>
+				<View style={styles.detailItems}>
 					{props.items.map((cartItem) => (
 						<CartItem
-                            key={cartItem.productId}
+							key={cartItem.productId}
 							quantity={cartItem.quantity}
 							title={cartItem.productTitle}
 							amount={cartItem.sum}
@@ -66,6 +66,9 @@ const styles = StyleSheet.create({
 		fontSize: 16,
 		fontFamily: 'open-sans',
 		color: '#888',
+	},
+	detailItems: {
+		width: '100%',
 	},
 });
 
