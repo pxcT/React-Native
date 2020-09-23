@@ -3,8 +3,9 @@ import { View, Text } from 'react-native';
 
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import ReduxThunk from 'redux-thunk';
 
 import ShopNavigator from './navigation/ShopNavigator';
 
@@ -20,7 +21,7 @@ const rootReducer = combineReducers({
 	orders: ordersReducer,
 });
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 
 const fetchFonts = () => {
 	return Font.loadAsync({
