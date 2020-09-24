@@ -75,6 +75,7 @@ const EditProductScreen = (props) => {
 	// TEXT CHANGE HANDLER
 	const inputChangeHandler = useCallback(
 		(inputIdentifier, inputValue, inputValidity) => {
+			console.log('got here', inputValue);
 			dispatchFormState({
 				type: FORM_INPUT_UPDATE,
 				value: inputValue,
@@ -178,7 +179,7 @@ const EditProductScreen = (props) => {
 						onInputChange={inputChangeHandler}
 						initiallyValid={!!editedProduct}
 						initialValue={
-							editedProduct ? initialValue.description : ''
+							editedProduct ? editedProduct.description : ''
 						}
 						required
 						minLength={5}
