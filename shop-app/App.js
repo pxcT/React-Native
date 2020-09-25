@@ -13,8 +13,6 @@ import productsReducer from './store/reducers/products.reducer';
 import cartReducer from './store/reducers/cart.reducer';
 import ordersReducer from './store/reducers/orders.reducer';
 
-import { composeWithDevTools } from 'redux-devtools-extension';
-
 const rootReducer = combineReducers({
 	products: productsReducer,
 	cart: cartReducer,
