@@ -22,6 +22,7 @@ const ProductsOverviewScreen = (props) => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [isRefreshing, setIsRefreshing] = useState(false);
 	const [error, setError] = useState();
+	
 	const products = useSelector((state) => state.products.availableProducts);
 	// const products = [];
 	const dispatch = useDispatch();
