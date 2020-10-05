@@ -137,11 +137,11 @@ const styles = StyleSheet.create({
 	},
 });
 
-ProductsOverviewScreen.navigationOptions = (navData) => {
+export const screenOptions = (navData) => {
 	return {
 		headerTitle: 'All Products',
 		headerRight: () => {
-			return (
+			return ( 
 				<HeaderButtons HeaderButtonComponent={HeaderButton}>
 					<Item
 						title='Cart'

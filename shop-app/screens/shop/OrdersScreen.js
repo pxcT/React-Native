@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 	},
 });
 
-OrdersScreen.navigationOptions = (navData) => {
+const screenOptions = (navData) => {
 	return {
 		headerTitle: 'Your orders',
 		headerLeft: () => {
