@@ -3,6 +3,7 @@ import { AsyncStorage } from 'react-native';
 // export const SIGN_UP = 'SINGNUP';
 // export const LOGIN = 'LOGIN';
 export const AUTHENTICATE = 'AUTHENTICATE';
+export const SET_DID_TRY_AL = 'SET_DID_TRY_AL';
 export const LOGOUT = 'LOGOUT';
 
 let timer;
@@ -121,7 +122,7 @@ const setLogoutTimer = (expirationTime) => {
 	return (dispatch) => {
 		timer = setTimeout(() => {
 			dispatch(logout());
-		}, expirationTime / 1000);
+		}, expirationTime);
 	};
 };
 
@@ -138,3 +139,7 @@ export const logout = () => {
 		type: LOGOUT,
 	};
 };
+
+export const setDidTryAL = () => {
+	return { type: SET_DID_TRY_AL };
+}

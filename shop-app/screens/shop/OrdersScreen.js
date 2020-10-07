@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
 	},
 });
 
-const screenOptions = (navData) => {
+export const screenOptions = (navData) => {
 	return {
 		headerTitle: 'Your orders',
 		headerLeft: () => {
